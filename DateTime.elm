@@ -59,7 +59,17 @@ dayOfWeek time =
                  diw = alteredDayNum % 7
              in daysInWeek |> drop diw |> head
 
+currentTime :  Float -> String
+currentTime time = 
+               let (h,myn) = hourMinute time
+               in displayTime(h,myn)
 
+currentDate :  Float -> String
+currentDate time = 
+                let  (dw,dy,m,yn) = dayNameMonthYear time
+                in displayDate (dw,dy,m,yn) 
+
+                
 currentDateAndTime : Float -> String
 currentDateAndTime time = 
                       let (dw,dy,m,yn) = dayNameMonthYear time
